@@ -22,17 +22,22 @@ export const links: LinksFunction = () => [
   },
 ];
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+      <body className="bg-gray-50">
+        <Header /> {/* 👈 헤더 추가 */}
+        <main className="p-4">{children}</main>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
